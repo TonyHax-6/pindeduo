@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>恭喜中奖！</title>
+    
+    <!-- 土味字体CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 步骤1: 震撼开场 -->
+    <div id="step1" class="step active">
+        <div class="confetti-container"></div>
+        <div class="prize-box">
+            <div class="badge-100 glow-pulse">100%中奖</div>
+            <h1 class="blink-text glow-pulse">🎉 恭喜您中奖了！🎉</h1>
+            <div class="trophy">🏆</div>
+            <div class="prize-info">
+                <p class="prize-title">您获得了【免费领取神秘大奖】资格！</p>
+                <div class="price-box">
+                    <div class="original-price">原价：<span class="price-strike">￥999999</span></div>
+                    <div class="current-price">当前价格：<span class="price-red neon-glow">￥888</span></div>
+                </div>
+                <p class="tip-text super-blink">🔥 仅需砍价至0元即可免费领取！🔥</p>
+            </div>
+            <button class="big-button shake" onclick="goToStep(2)">
+                立即开始砍价
+            </button>
+        </div>
+    </div>
+
+    <!-- 步骤2: 砍价教程 -->
+    <div id="step2" class="step">
+        <div class="tutorial-overlay">
+            <div class="tutorial-box">
+                <h2>💡 新手教程</h2>
+                <div class="tutorial-content">
+                    <div class="tutorial-item">
+                        <span class="tutorial-icon">👆</span>
+                        <p>每次点击可随机砍价1-80元！</p>
+                    </div>
+                    <div class="tutorial-item">
+                        <span class="tutorial-icon">🎯</span>
+                        <p>砍到0元即可免费领取！</p>
+                    </div>
+                    <div class="tutorial-item">
+                        <span class="tutorial-icon">⚡</span>
+                        <p>快来试试手气吧！</p>
+                    </div>
+                </div>
+                <button class="big-button" onclick="goToStep(3)">
+                    我知道了，开始砍价！
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 步骤3: 砍价阶段 -->
+    <div id="step3" class="step">
+        <div class="bargain-container">
+            <div class="bargain-header">
+                <h1 class="blink-text glow-pulse">🔥 砍价免费拿 🔥</h1>
+                <p style="color: #FFD700; font-size: 18px; font-weight: 900; text-align: center; margin-top: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">🎉 砍到￥0元就能领取神秘大奖！🎉</p>
+            </div>
+            
+            <div class="price-display">
+                <div class="remaining-price">
+                    <span class="label">还差</span>
+                    <span id="currentPrice" class="price-number neon-glow">888.00</span>
+                    <span class="label">元</span>
+                </div>
+                <div id="specialHint" style="text-align: center; color: #FF0000; font-size: 16px; font-weight: 900; margin-top: 10px; min-height: 25px; font-family: 'ZCOOL KuaiLe', sans-serif;"></div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                        <span id="progressText" class="progress-text">0%</span>
+                    </div>
+                </div>
+                <div class="target-price">
+                    目标：<span class="price-green">￥0</span>
+                </div>
+            </div>
+
+            <div class="bargain-action">
+                <button id="bargainBtn" class="bargain-button shake bounce-scale" onclick="handleBargain()">
+                    <span class="button-icon">🔪</span>
+                    <span class="button-text">砍一刀</span>
+                </button>
+                <div id="bargainMessage" class="bargain-message"></div>
+                <div id="encouragement" style="margin-top: 15px; font-size: 18px; font-weight: 900; color: #FF8800; min-height: 25px; font-family: 'ZCOOL KuaiLe', sans-serif;"></div>
+            </div>
+
+            <div class="bargain-records">
+                <h3>🔥 砍价记录</h3>
+                <div id="recordsList" class="records-list">
+                    <div class="record-item">188****8888 刚刚砍了 50元</div>
+                    <div class="record-item">139****0000 刚刚砍了 30元</div>
+                    <div class="record-item">156****7777 刚刚砍了 45元</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 步骤4: 假装加载 -->
+    <div id="step4" class="step">
+        <div class="loading-container">
+            <h2>正在处理中...</h2>
+            <div class="loading-bar">
+                <div id="loadingFill" class="loading-fill"></div>
+            </div>
+            <p id="loadingText" class="loading-text">正在核实您的砍价记录...</p>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <!-- 步骤5: 躲避按钮 -->
+    <div id="step5" class="step">
+        <div class="verify-overlay">
+            <div class="verify-box">
+                <h2>🎊 最后一步！请确认领取</h2>
+                <p class="verify-tip">请点击【确认领取】按钮完成验证</p>
+                <button id="confirmBtn" class="confirm-button" onclick="handleConfirm()">
+                    确认领取
+                </button>
+                <button class="reject-button" onclick="handleReject()">
+                    放弃领取
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 步骤6: 开奖动画 -->
+    <div id="step6" class="step">
+        <div class="redpacket-container">
+            <h2 class="blink-text">🎁 点击领取您的奖品！</h2>
+            <div id="redpacket" class="redpacket" onclick="openRedpacket()">
+                <div class="redpacket-top"></div>
+                <div class="redpacket-body">
+                    <div class="redpacket-text">领</div>
+                </div>
+            </div>
+            <p class="redpacket-tip">点击红包打开</p>
+        </div>
+    </div>
+
+    <!-- 步骤7: 最终表白 -->
+    <div id="step7" class="step">
+        <div class="confession-container">
+            <h1 class="blink-text glow-pulse">🎉 恭喜您领取成功！🎉</h1>
+            <p style="text-align: center; color: #FFD700; font-size: 20px; font-weight: 900; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-family: 'ZCOOL KuaiLe', sans-serif;">
+                💘 来自 Tinder 的命中注定，因水烟而结缘 💘
+            </p>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="assets/boyfriend-photo.jpg" alt="男朋友照片" style="width: 200px; height: 200px; border-radius: 15px; object-fit: cover; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                </div>
+                
+                <div class="product-info">
+                    <h2 class="product-name">【限量版】男朋友一枚</h2>
+                    
+                    <div style="background: linear-gradient(135deg, #FFE5E5, #FFF0F0); border-radius: 10px; padding: 15px; margin-bottom: 20px; border: 2px dashed #FF69B4;">
+                        <h3 style="color: #FF1493; font-size: 18px; font-weight: 900; text-align: center; margin-bottom: 10px; font-family: 'ZCOOL KuaiLe', sans-serif;">❤️ 我们的故事 ❤️</h3>
+                        <div style="font-size: 15px; color: #666; line-height: 1.8; font-weight: 700;">
+                            <p style="margin: 8px 0;"><span style="color: #FF69B4; font-weight: 900;">📱 初遇：</span>Tinder 上的左滑右滑，命运让我们匹配成功</p>
+                            <p style="margin: 8px 0;"><span style="color: #FF69B4; font-weight: 900;">💘 相恋：</span>因为水烟的缘分，我们越走越近</p>
+                            <p style="margin: 8px 0;"><span style="color: #FF69B4; font-weight: 900;">🎉 今天：</span>你终于“砍价”把我带回家啦！</p>
+                        </div>
+                    </div>
+                    
+                    <div class="product-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">品牌：</span>
+                            <span class="spec-value">🔥 Tinder精选款</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">特殊技能：</span>
+                            <span class="spec-value">💨 与你一起抽水烟、聊天到天亮</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">规格：</span>
+                            <span class="spec-value">17?cm / ??kg 🤫</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">功能：</span>
+                            <span class="spec-value">陪聊、陪玩、陪吃、包接包送</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">质保：</span>
+                            <span class="spec-value">终身保修</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">库存：</span>
+                            <span class="spec-value highlight">仅此1件</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-price">
+                        <span class="price-original">原价：￥999999</span>
+                        <span class="price-final neon-glow">优惠价：￥0</span>
+                        <span class="price-tag glow-pulse">限时免费领取</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="receive-button" onclick="handleReceive()">
+                    ✅ 确认收货
+                </button>
+                <button class="share-button" onclick="handleShare()">
+                    📤 分享给好友
+                </button>
+            </div>
+
+            <div id="finalMessage" class="final-message"></div>
+        </div>
+    </div>
+
+    <!-- 步骤8: 超级土味我爱你 -->
+    <div id="step8" class="step">
+        <div class="love-container">
+            <div class="love-fireworks"></div>
+            
+            <h1 class="love-title rainbow-text crazy-shake">我爱你</h1>
+            
+            <div class="love-hearts">
+                <span class="heart" style="--delay: 0s">❤️</span>
+                <span class="heart" style="--delay: 0.3s">💕</span>
+                <span class="heart" style="--delay: 0.6s">💖</span>
+                <span class="heart" style="--delay: 0.9s">💗</span>
+                <span class="heart" style="--delay: 1.2s">💓</span>
+                <span class="heart" style="--delay: 1.5s">💝</span>
+            </div>
+            
+            <div class="love-message-box">
+                <p class="love-text glow-pulse">
+                    从 Tinder 的一次心动<br>
+                    到水烟馆的深夜畅聊<br>
+                    你是我最美好的意外<br>
+                    <span class="super-blink" style="font-size: 32px; color: #FF1493;">💘 我爱你 💘</span>
+                </p>
+            </div>
+            
+            <div class="love-bottom neon-glow">
+                <p style="font-size: 24px; margin: 10px 0;">❤️ Forever & Always ❤️</p>
+                <p style="font-size: 18px; margin: 10px 0;">💑 You & Me 💑</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 音效控制 -->
+    <div class="sound-control">
+        <button id="soundToggle" class="sound-button" onclick="toggleSound()">
+            🔊
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
