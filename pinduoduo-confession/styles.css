@@ -1,0 +1,1259 @@
+/* 拼多多风格配色变量 */
+:root {
+    --pdd-red: #FF4444;
+    --pdd-dark-red: #CC0000;
+    --pdd-gold: #FFD700;
+    --pdd-orange: #FF8C00;
+    --text-primary: #FF0000;
+    --text-highlight: #FFD700;
+    --text-dark: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans SC', 'ZCOOL KuaiLe', 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', 'SimHei', sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);
+    min-height: 100vh;
+    font-weight: 700;
+}
+
+/* 步骤容器 */
+.step {
+    display: none;
+    min-height: 100vh;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.step.active {
+    display: flex;
+}
+
+/* ========== 步骤1: 震撼开场 ========== */
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.prize-box {
+    background: linear-gradient(135deg, #FF4444 0%, #FF6B6B 100%);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+    border: 5px solid #FFD700;
+    position: relative;
+    z-index: 2;
+    animation: slideIn 0.5s ease-out;
+}
+
+.badge-100 {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: #FFD700;
+    color: #FF0000;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 16px;
+    font-family: 'Noto Sans SC', sans-serif;
+    transform: rotate(15deg);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    animation: bounce 1s infinite;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.prize-box h1 {
+    color: #FFD700;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', 'ZCOOL KuaiLe', sans-serif;
+    text-shadow: 
+        2px 2px 0 #000,
+        4px 4px 0 #333,
+        6px 6px 0 #666,
+        8px 8px 15px rgba(0,0,0,0.6),
+        0 0 20px #FFD700,
+        0 0 30px #FFA500;
+    -webkit-text-stroke: 1px rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+}
+
+.trophy {
+    font-size: 80px;
+    animation: rotate 2s linear infinite;
+}
+
+.prize-info {
+    margin: 30px 0;
+    color: white;
+}
+
+.prize-title {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    font-family: 'Noto Sans SC', sans-serif;
+    text-shadow: 
+        2px 2px 0 #000,
+        4px 4px 8px rgba(0,0,0,0.5),
+        0 0 10px #FFD700;
+    -webkit-text-stroke: 0.5px rgba(0,0,0,0.2);
+}
+
+.price-box {
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.original-price {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.price-strike {
+    text-decoration: line-through;
+    color: #FFD700;
+}
+
+.current-price {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.price-red {
+    color: #FF0000;
+    font-size: 42px;
+    font-weight: 900;
+    font-family: 'Arial Black', 'Noto Sans SC', sans-serif;
+    text-shadow:
+        0 0 5px #FFD700,
+        0 0 10px #FFD700,
+        0 0 20px #FFA500,
+        2px 2px 0 #000,
+        4px 4px 0 rgba(0,0,0,0.3);
+    -webkit-text-stroke: 1px #8B0000;
+    letter-spacing: 2px;
+}
+
+.tip-text {
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 15px;
+    animation: pulse 1.5s infinite;
+    font-family: 'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif;
+    text-shadow: 
+        2px 2px 0 rgba(0,0,0,0.5),
+        0 0 10px #FFD700;
+}
+
+/* ========== 步骤2: 教程 ========== */
+.tutorial-overlay {
+    background: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tutorial-box {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    text-align: center;
+    border: 3px solid #FFD700;
+}
+
+.tutorial-box h2 {
+    color: #FFD700;
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    text-shadow: 
+        2px 2px 0 #000,
+        4px 4px 0 #333,
+        6px 6px 10px rgba(0,0,0,0.5),
+        0 0 15px #FFA500;
+    -webkit-text-stroke: 0.5px rgba(0,0,0,0.3);
+}
+
+.tutorial-content {
+    background: rgba(255,255,255,0.2);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.tutorial-item {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.tutorial-icon {
+    font-size: 36px;
+    margin-right: 15px;
+}
+
+/* ========== 步骤3: 砍价阶段 ========== */
+.bargain-container {
+    max-width: 600px;
+    width: 100%;
+}
+
+.bargain-header h1 {
+    background: linear-gradient(90deg, #FF0000, #FFD700, #FF0000);
+    background-size: 200% auto;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    text-shadow: 
+        2px 2px 0 #000,
+        4px 4px 0 #333,
+        6px 6px 10px rgba(0,0,0,0.6);
+    margin-bottom: 30px;
+    animation: gradientMove 3s linear infinite;
+    -webkit-text-stroke: 0.5px rgba(0,0,0,0.3);
+    letter-spacing: 3px;
+}
+
+.price-display {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.remaining-price {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.remaining-price .label {
+    font-size: 20px;
+    color: #666;
+    font-weight: 700;
+}
+
+.price-number {
+    font-size: 56px;
+    font-weight: 900;
+    font-family: 'Arial Black', 'Noto Sans SC', sans-serif;
+    color: #FF0000;
+    margin: 0 10px;
+    text-shadow:
+        0 0 5px #FFD700,
+        0 0 10px #FFD700,
+        0 0 20px #FFA500,
+        2px 2px 0 #000,
+        4px 4px 0 rgba(0,0,0,0.3),
+        6px 6px 15px rgba(255,0,0,0.5);
+    -webkit-text-stroke: 1.5px #8B0000;
+    letter-spacing: 3px;
+}
+
+.progress-container {
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 40px;
+    background: #E0E0E0;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FF6B6B, #FFD700);
+    width: 0%;
+    transition: width 0.5s ease;
+    position: relative;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 900;
+    font-size: 20px;
+    color: #333;
+    font-family: 'Arial Black', 'Noto Sans SC', sans-serif;
+    text-shadow: 0 0 3px rgba(255,215,0,0.5);
+}
+
+.target-price {
+    text-align: center;
+    font-size: 20px;
+    color: #666;
+    font-weight: 700;
+}
+
+.price-green {
+    color: #00AA00;
+    font-size: 28px;
+    font-weight: 900;
+    font-family: 'Arial Black', 'Noto Sans SC', sans-serif;
+    text-shadow: 
+        0 0 5px rgba(0,255,0,0.3),
+        1px 1px 0 #000;
+}
+
+.bargain-action {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.bargain-button {
+    background: linear-gradient(135deg, #FF4444, #FF0000);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    font-size: 24px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(255,0,0,0.4);
+    transition: transform 0.1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    text-shadow: 
+        2px 2px 0 rgba(0,0,0,0.5),
+        0 0 10px rgba(255,215,0,0.5);
+}
+
+.bargain-button:hover {
+    transform: scale(1.05);
+}
+
+.bargain-button:active {
+    transform: scale(0.95);
+}
+
+.button-icon {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.button-text {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.bargain-message {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 900;
+    min-height: 30px;
+    animation: fadeIn 0.3s;
+    font-family: 'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.bargain-records {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.bargain-records h3 {
+    color: #FF4444;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    text-shadow: 1px 1px 2px rgba(255,0,0,0.3);
+}
+
+.records-list {
+    font-size: 14px;
+    color: #666;
+}
+
+.record-item {
+    padding: 10px;
+    border-bottom: 1px dashed #ddd;
+    animation: slideInLeft 0.5s;
+}
+
+.record-item:last-child {
+    border-bottom: none;
+}
+
+/* ========== 步骤4: 加载 ========== */
+.loading-container {
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.loading-container h2 {
+    color: #FF4444;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    text-shadow: 
+        2px 2px 0 rgba(0,0,0,0.2),
+        0 0 10px rgba(255,0,0,0.3);
+}
+
+.loading-bar {
+    width: 100%;
+    height: 30px;
+    background: #E0E0E0;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.loading-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FF6B6B, #FFD700);
+    width: 0%;
+    transition: width 0.3s linear;
+}
+
+.loading-text {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #FF4444;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+/* ========== 步骤5: 躲避按钮 ========== */
+.verify-overlay {
+    background: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.verify-box {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.verify-box h2 {
+    color: #FF4444;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    text-shadow: 
+        2px 2px 0 rgba(0,0,0,0.2),
+        0 0 10px rgba(255,0,0,0.3);
+}
+
+.verify-tip {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.confirm-button {
+    background: linear-gradient(135deg, #FF4444, #FF0000);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 0 5px 15px rgba(255,0,0,0.3);
+    transition: all 0.3s;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.confirm-button:hover {
+    transform: scale(1.05);
+}
+
+.reject-button {
+    background: #ccc;
+    color: #666;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+/* ========== 步骤6: 红包 ========== */
+.redpacket-container {
+    text-align: center;
+}
+
+.redpacket-container h2 {
+    color: #FFD700;
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    text-shadow: 
+        2px 2px 0 #000,
+        4px 4px 0 #333,
+        6px 6px 10px rgba(0,0,0,0.6),
+        0 0 20px #FFA500;
+    -webkit-text-stroke: 0.5px rgba(0,0,0,0.3);
+}
+
+.redpacket {
+    width: 200px;
+    height: 260px;
+    margin: 0 auto;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.redpacket:hover {
+    transform: scale(1.05);
+}
+
+.redpacket-top {
+    width: 200px;
+    height: 80px;
+    background: #C8102E;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+
+.redpacket-top::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: #FFD700;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.redpacket-body {
+    width: 200px;
+    height: 180px;
+    background: #D4152E;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redpacket-text {
+    color: #FFD700;
+    font-size: 60px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    text-shadow: 
+        2px 2px 0 #000,
+        4px 4px 8px rgba(0,0,0,0.5);
+}
+
+.redpacket-tip {
+    color: white;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: 700;
+    animation: pulse 1.5s infinite;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* ========== 步骤7: 表白 ========== */
+.confession-container {
+    max-width: 700px;
+    width: 100%;
+}
+
+.confession-container h1 {
+    color: #FFD700;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    text-shadow: 
+        2px 2px 0 #000,
+        4px 4px 0 #333,
+        6px 6px 0 #666,
+        8px 8px 15px rgba(0,0,0,0.6),
+        0 0 20px #FFD700,
+        0 0 30px #FFA500;
+    -webkit-text-stroke: 1px rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+}
+
+.product-image {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.placeholder-image {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    border-radius: 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+}
+
+.placeholder-image p {
+    font-size: 14px;
+    color: white;
+    margin-top: 10px;
+}
+
+.product-name {
+    color: #FF4444;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    text-shadow: 
+        2px 2px 0 rgba(0,0,0,0.2),
+        0 0 10px rgba(255,0,0,0.3);
+    -webkit-text-stroke: 0.5px rgba(0,0,0,0.2);
+}
+
+.product-specs {
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.spec-item {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 16px;
+}
+
+.spec-item:last-child {
+    border-bottom: none;
+}
+
+.spec-label {
+    color: #666;
+    min-width: 100px;
+    font-weight: bold;
+}
+
+.spec-value {
+    color: #333;
+    flex: 1;
+}
+
+.spec-value.highlight {
+    color: #FF0000;
+    font-weight: bold;
+}
+
+.product-price {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.price-original {
+    display: block;
+    color: #999;
+    text-decoration: line-through;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.price-final {
+    display: block;
+    color: #FF0000;
+    font-size: 42px;
+    font-weight: 900;
+    font-family: 'Arial Black', 'Noto Sans SC', sans-serif;
+    margin-bottom: 10px;
+    text-shadow:
+        0 0 5px #FFD700,
+        0 0 10px #FFD700,
+        2px 2px 0 #000,
+        4px 4px 0 rgba(0,0,0,0.3);
+    -webkit-text-stroke: 1px #8B0000;
+    letter-spacing: 2px;
+}
+
+.price-tag {
+    display: inline-block;
+    background: #FF0000;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.receive-button,
+.share-button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.receive-button {
+    background: linear-gradient(135deg, #FF4444, #FF0000);
+    color: white;
+    box-shadow: 0 5px 15px rgba(255,0,0,0.3);
+}
+
+.share-button {
+    background: #FFD700;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+}
+
+.receive-button:hover,
+.share-button:hover {
+    transform: translateY(-2px);
+}
+
+.final-message {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* ========== 通用按钮 ========== */
+.big-button {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #333;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 40px;
+    font-size: 22px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255,165,0,0.4);
+    transition: all 0.3s;
+    text-shadow: 
+        1px 1px 2px rgba(0,0,0,0.3),
+        0 0 5px rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+}
+
+.big-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(255,165,0,0.5);
+}
+
+.big-button:active {
+    transform: translateY(-1px);
+}
+
+/* ========== 音效控制 ========== */
+.sound-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.sound-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.9);
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.sound-button:hover {
+    transform: scale(1.1);
+}
+
+.sound-button.muted {
+    opacity: 0.5;
+}
+
+/* ========== 动画 ========== */
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.5; }
+}
+
+.blink-text {
+    animation: blink 2s infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 2s infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) rotate(15deg); }
+    50% { transform: translateY(-10px) rotate(15deg); }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ========== 步骤8: 超级土味我爱你 ========== */
+.love-container {
+    width: 100%;
+    max-width: 800px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    background: linear-gradient(135deg, #FF69B4, #FF1493, #C71585);
+    background-size: 200% 200%;
+    animation: gradientMove 5s ease infinite;
+}
+
+.love-fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.love-title {
+    font-size: 120px;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+    margin: 30px 0;
+    text-shadow: 
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 30px #FFD700,
+        0 0 40px #FFD700,
+        0 0 50px #FFD700,
+        0 0 60px #FFD700,
+        0 0 70px #FFD700,
+        5px 5px 0 #000,
+        10px 10px 0 #333;
+    -webkit-text-stroke: 3px #FF0000;
+    position: relative;
+    z-index: 10;
+}
+
+.love-hearts {
+    display: flex;
+    gap: 20px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.heart {
+    font-size: 60px;
+    animation: heart-beat 1s ease-in-out infinite;
+    animation-delay: var(--delay);
+    filter: drop-shadow(0 0 10px rgba(255,0,0,0.8));
+}
+
+@keyframes heart-beat {
+    0%, 100% { 
+        transform: scale(1); 
+    }
+    50% { 
+        transform: scale(1.3); 
+    }
+}
+
+.love-message-box {
+    background: rgba(255, 255, 255, 0.95);
+    border: 5px solid #FF69B4;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 30px 0;
+    box-shadow: 
+        0 0 20px rgba(255,105,180,0.8),
+        0 0 40px rgba(255,20,147,0.6),
+        0 10px 50px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+}
+
+.love-text {
+    font-size: 24px;
+    font-weight: 900;
+    font-family: 'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif;
+    color: #C71585;
+    line-height: 1.8;
+    text-align: center;
+    text-shadow: 
+        2px 2px 0 rgba(255,255,255,0.8),
+        0 0 10px rgba(255,105,180,0.5);
+}
+
+.love-bottom {
+    margin-top: 30px;
+    text-align: center;
+    font-weight: 900;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.love-bottom p {
+    text-shadow: 
+        0 0 10px #fff,
+        0 0 20px #FFD700,
+        2px 2px 0 #000;
+    -webkit-text-stroke: 1px #FF0000;
+}
+
+/* ========== 超级土味特效 ========== */
+
+/* 彩虹渐变文字 */
+.rainbow-text {
+    background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3, #FF0000);
+    background-size: 400% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rainbow-flow 3s linear infinite;
+}
+
+@keyframes rainbow-flow {
+    0% { background-position: 0% center; }
+    100% { background-position: 400% center; }
+}
+
+/* 超级闪烁 */
+.super-blink {
+    animation: super-blink 0.5s infinite;
+}
+
+@keyframes super-blink {
+    0%, 100% { 
+        opacity: 1; 
+        text-shadow: 
+            0 0 10px #FFD700,
+            0 0 20px #FFD700,
+            0 0 30px #FFA500,
+            0 0 40px #FF4500;
+    }
+    50% { 
+        opacity: 0.7;
+        text-shadow: 
+            0 0 5px #FFD700,
+            0 0 10px #FFA500;
+    }
+}
+
+/* 疯狂抖动 */
+.crazy-shake {
+    animation: crazy-shake 0.5s infinite;
+}
+
+@keyframes crazy-shake {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    10% { transform: translate(-3px, -3px) rotate(-2deg); }
+    20% { transform: translate(3px, 3px) rotate(2deg); }
+    30% { transform: translate(-3px, 3px) rotate(-1deg); }
+    40% { transform: translate(3px, -3px) rotate(1deg); }
+    50% { transform: translate(-3px, -3px) rotate(-2deg); }
+    60% { transform: translate(3px, 3px) rotate(2deg); }
+    70% { transform: translate(-3px, 3px) rotate(-1deg); }
+    80% { transform: translate(3px, -3px) rotate(1deg); }
+    90% { transform: translate(-3px, -3px) rotate(-2deg); }
+}
+
+/* 呼吸发光 */
+.glow-pulse {
+    animation: glow-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 5px #FFD700,
+            0 0 10px #FFD700,
+            0 0 15px #FFA500,
+            2px 2px 0 #000;
+    }
+    50% {
+        text-shadow: 
+            0 0 20px #FFD700,
+            0 0 30px #FFD700,
+            0 0 40px #FFA500,
+            0 0 50px #FF4500,
+            2px 2px 0 #000;
+    }
+}
+
+/* 放大缩小跳动 */
+.bounce-scale {
+    animation: bounce-scale 1s ease-in-out infinite;
+}
+
+@keyframes bounce-scale {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    75% { transform: scale(0.95); }
+}
+
+/* 3D翻转 */
+.flip-3d {
+    animation: flip-3d 2s ease-in-out infinite;
+}
+
+@keyframes flip-3d {
+    0%, 100% { transform: rotateY(0deg); }
+    50% { transform: rotateY(180deg); }
+}
+
+/* 霓虹灯效果 */
+.neon-glow {
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #fff,
+        0 0 20px #FF0000,
+        0 0 35px #FF0000,
+        0 0 40px #FF0000,
+        0 0 50px #FF0000,
+        0 0 75px #FF0000;
+    animation: neon-flicker 1.5s ease-in-out infinite;
+}
+
+@keyframes neon-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 
+            0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 15px #fff,
+            0 0 20px #FF0000,
+            0 0 35px #FF0000,
+            0 0 40px #FF0000,
+            0 0 50px #FF0000,
+            0 0 75px #FF0000;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+/* 超粗描边 */
+.super-stroke {
+    -webkit-text-stroke: 3px #000;
+    paint-order: stroke fill;
+}
+
+/* ========== 响应式设计 ========== */
+@media (max-width: 768px) {
+    .prize-box,
+    .tutorial-box,
+    .bargain-container,
+    .loading-container,
+    .verify-box,
+    .confession-container {
+        padding: 20px;
+    }
+    
+    .prize-box h1,
+    .confession-container h1 {
+        font-size: 24px;
+    }
+    
+    .price-number {
+        font-size: 36px;
+    }
+    
+    .bargain-button {
+        width: 120px;
+        height: 120px;
+        font-size: 20px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    /* 步骤8手机适配 */
+    .love-title {
+        font-size: 60px;
+    }
+    
+    .love-message-box {
+        padding: 20px;
+    }
+    
+    .love-text {
+        font-size: 18px;
+    }
+    
+    .love-text span {
+        font-size: 24px !important;
+    }
+    
+    .heart {
+        font-size: 40px;
+    }
+    
+    .love-bottom p {
+        font-size: 18px !important;
+    }
+}
